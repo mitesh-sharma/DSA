@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+//class node
 class Node{
     public:
         int data;
