@@ -77,8 +77,8 @@ void print(Node* &head){
     }
     cout << endl;
 }
+
 //delete the element at that position
-//have to write code for deletion of last element
 void deleteNode(Node* &head, int position){
     int i =1;
 
@@ -103,6 +103,32 @@ void deleteNode(Node* &head, int position){
     }
 }
 
+//recursive function to reverse a linked list
+Node* reverseLLRE(Node* prev, Node* curr){
+    if(curr == NULL){
+        return prev;
+    }
+
+    Node* temp = curr -> next;
+    curr->next = prev;
+
+    reverseLLRE(curr, temp);
+}
+
+//iterative method to reverse a linked list
+void reverseLLloop(Node* &head){
+    Node* prev = NULL;
+    Node* curr = head;
+
+    while(curr != NULL){
+        Node* temp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = temp;
+    }
+    head = prev;
+}
+
 int main()
 {
 
@@ -111,12 +137,7 @@ int main()
     Node* tail = node1;
     print(head);
 
-    insertAtHead(head, 0);
-
     insertAtTail(tail, 3);
-    print(head);
-
-    insertInPosition(tail, head, 3, 4);
     print(head);
 
     insertAtTail(tail, 5);
@@ -124,13 +145,14 @@ int main()
 
     insertAtTail(tail, 91);
     print(head);
-    cout << tail->next << endl;
-    
-    deleteNode(head, 3);
-    deleteNode(head, 1);
+
+    //first reverse
+    head = reverseLLRE(NULL, head);
     print(head);
-    
-    //deleteNode(head, 5);
-    //print(head);
+
+    //second reverse
+    reverseLLloop(head);
+    print(head);
+
     return 0;
 }
