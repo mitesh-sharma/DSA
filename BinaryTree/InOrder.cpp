@@ -35,9 +35,10 @@ void inorderRecursive(node* root){
         return ;
     }
 
-    inorder(root->left);
+    inorderRecursive(root->left);
     cout << root->data << " ";
-    inorder(root->right);
+    inorderRecursive(root->right);
+    //this is mitesh sharma
 }
 
 int main()
