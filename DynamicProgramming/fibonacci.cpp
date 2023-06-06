@@ -55,6 +55,6 @@ int main()
     // int ans = topDown(n, dp);
     // int ans = bottomUp(n);
     int ans = so(n);
-    cout << ans;
+    cout << "term at index "<< n << " is: " << ans;
     return 0;
 }
