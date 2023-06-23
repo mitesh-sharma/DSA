@@ -15,7 +15,6 @@ pair<int, int> solve(vector <int> v, pair <int, int>& p, int i){
     solve(v, p, i+1);
     return p;
 }
-
 int main()
 {
     pair <int, int> p = {0,0}; 
