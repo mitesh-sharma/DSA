@@ -68,9 +68,10 @@ int main()
     unordered_map <int, bool> dfsvisited;
     bool ans;
     for(int i=0; i<n; i++){
+        //USING DFS
         ans = g.checkCyclicDirectedGraphDFS(i, visited, dfsvisited);
     }
-
+    //IN DIRECTED GRAPH CYCLE CAN BE FOUND USING BFS BY TOPOLOGICAL SORT
     if(ans){
         cout << "Cycle present" << endl;
     }

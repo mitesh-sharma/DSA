@@ -1,13 +1,16 @@
 #include<iostream>
+#include<vector>
 #include<unordered_map>
 #include<list>
 #include <queue>
+#include <stack>
 using namespace std;
 template <typename T>
 
 class Graph{
 
     unordered_map<T, list <int>> adjList;
+
     public:
         void addEdge(T u, T v, bool isdirected){
             adjList[u].push_back(v);
@@ -26,17 +29,31 @@ class Graph{
                 cout << endl;
             }
         }
+
+        int countSCC(){
+            
+        }
+
 };
 int main()
 {
     Graph <int> g;
 
-    //add edges (u, v, directed)
-    g.addEdge(0,1,0);
+    g.addEdge(0,1,1);
+    g.addEdge(1,2,1);
+    g.addEdge(2,3,1);
+    g.addEdge(3,4,1);
+    g.addEdge(4,5,1);
+    g.addEdge(5,2,1);
 
-    //printGraph
+    int n;
+    cout << "Enter the number of nodes: ";
+    cin >> n;
+
     g.printAdjList();
     cout << endl;
 
+    
+    
     return 0;
 }

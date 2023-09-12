@@ -38,7 +38,68 @@ void insertAtHead(Node* &head, Node* &tail, int data) {
 //I want to insert a node right at the end of LINKED LIST
 void insertAtTail(Node* &head,Node* &tail, int data) {
         if(head == NULL) {
-                Node* newNode = new Node(data);
+                Node* newNode = #include<iostream>
+                #include <bits/stdc++.h>
+                using namespace std;
+                
+                class Node{
+                    public:
+                    int data;
+                    Node* next;
+                
+                    Node(int data){
+                        this -> data = data;
+                        this -> next = NULL;
+                    }
+                    ~Node(){
+                        int value = this -> data;
+                        if(this -> next != NULL){
+                            delete next;
+                            this->next = NULL;
+                        }
+                        cout << "memory free for data " << value << endl;
+                    }
+                };
+                
+                //insert after head
+                void insertAfterHead(Node* &head, int data){
+                    Node* temp = new Node(data);
+                    head -> next = temp;
+                }
+                
+                // insert after the tail node
+                void insertAfterTail(Node* &head, int data){
+                    Node* newNode = new Node(data);
+                    Node* temp = head;
+                    while(temp->next){
+                        temp = temp->next;
+                    }
+                    temp->next = newNode;
+                    newNode->next = NULL;
+                }
+                
+                //printing a Linked List
+                void print(Node* &head){
+                    Node* temp = head;
+                    while(temp != NULL){
+                        cout << temp -> data << " ";
+                        temp = temp -> next;
+                    }
+                    cout << endl;
+                }
+                
+                int main()
+                {
+                    Node* node1 = new Node(10);
+                    Node* head = node1;
+                    Node* tail = node1;
+                
+                    insertAfterHead(head, 20);
+                    insertAfterTail(head, 30);
+                    print(head);
+                
+                    return 0;
+                }new Node(data);
                 head = newNode;
                 tail = newNode;
                 return;

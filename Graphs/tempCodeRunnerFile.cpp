@@ -1,5 +1,5 @@
-);
-    g.addEdge(1,3,0);
-    g.addEdge(1,4,0);
-    g.addEdge(1,5,0);
-    g.addEdge(3,4,0);
+auto result = st.find(make_pair(dist[nbr.first], nbr.first));
+                        if(result != st.end()){
+                            //remove it if found already
+                            st.erase(result);
+                        }
